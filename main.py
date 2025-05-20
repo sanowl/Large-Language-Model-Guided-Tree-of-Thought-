@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.distributions import Categorical
+import secrets
 
 # Define specific rules for the problem
 def rule_sum_ten(solution):
@@ -169,9 +170,8 @@ class ModelStub:
         Returns:
             dict: A dictionary containing the 'solution'.
         """
-        import random
-        num1 = random.randint(0, 10)
-        num2 = random.randint(0, 10)
+        num1 = secrets.SystemRandom().randint(0, 10)
+        num2 = secrets.SystemRandom().randint(0, 10)
         return {"solution": (num1, num2)}
 
 # Define the problem description with specific rules
